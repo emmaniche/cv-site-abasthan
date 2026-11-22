@@ -434,15 +434,15 @@ html[data-theme="light"] #cmdk-list li[aria-selected="true"]{background:rgba(166
   <h2 class="rv">Core Skills</h2>
   <p class="sub rv">From flow-station field comms to production web apps — the full stack of an infrastructure supervisor who ships software.</p>
   <div class="skillcat rv"><h3><span>◆</span>Software</h3>
-    <div class="chips"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">SQL (PostgreSQL / Drizzle)</span><span class="chip">Git &amp; GitHub</span></div></div>
+    <div class="chips"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">SQL (PostgreSQL / Drizzle)</span><span class="chip">Git &amp; GitHub</span><span class="chip">MCP server development</span><span class="chip">HyperFrames</span></div></div>
   <div class="skillcat rv"><h3><span>◆</span>Cloud &amp; APIs</h3>
-    <div class="chips"><span class="chip">Vercel</span><span class="chip">Render</span><span class="chip">Neon Postgres</span><span class="chip">Microsoft Graph / Office 365</span></div></div>
+    <div class="chips"><span class="chip">Vercel</span><span class="chip">Render</span><span class="chip">Neon Postgres</span><span class="chip">Abasthan PaaS</span><span class="chip">Netlify API</span><span class="chip">Keycloak / OIDC</span><span class="chip">SSH / SFTP automation</span><span class="chip">Microsoft Graph / Office 365</span></div></div>
   <div class="skillcat rv"><h3><span>◆</span>Power Platform</h3>
     <div class="chips"><span class="chip">Power Automate</span><span class="chip">Power Apps</span><span class="chip">SharePoint</span><span class="chip">Teams</span><span class="chip">OneDrive</span><span class="chip">Exchange</span></div></div>
   <div class="skillcat rv"><h3><span>◆</span>AI &amp; Automation</h3>
-    <div class="chips"><span class="chip">AI-agent workflows (MCP tooling, agent skills)</span><span class="chip">n8n</span><span class="chip">Playwright + ffmpeg</span></div></div>
+    <div class="chips"><span class="chip">AI-agent workflows (MCP tooling, agent skills)</span><span class="chip">n8n</span><span class="chip">Playwright + ffmpeg</span><span class="chip">HyperFrames video production</span></div></div>
   <div class="skillcat rv"><h3><span>◆</span>Infrastructure &amp; Domain</h3>
-    <div class="chips"><span class="chip">WAN/LAN &amp; Fibre</span><span class="chip">GSM/4G/Satellite comms</span><span class="chip">CCTV &amp; access control</span><span class="chip">Oil &amp; gas field ICT</span><span class="chip">Asset management</span></div></div>
+    <div class="chips"><span class="chip">WAN/LAN &amp; Fibre</span><span class="chip">GSM/4G/Satellite comms</span><span class="chip">CCTV &amp; access control</span><span class="chip">Oil &amp; gas field ICT</span><span class="chip">Asset management</span><span class="chip">Cost governance (FinOps)</span><span class="chip">Architectural concept design</span></div></div>
 </section>
 
 <section id="experience">
@@ -456,7 +456,9 @@ html[data-theme="light"] #cmdk-list li[aria-selected="true"]{background:rgba(166
       <div class="chipline rv"><span>OML 11 · Arahas · SGIR Rigs</span><span>2 live apps built</span><span>Power Platform daily</span><span>Rig moves</span></div>
       <ul>
         <li>Built <b>OML11 AssetHub</b>, a live asset issuance &amp; e-signature platform (Next.js, PostgreSQL, Microsoft Graph) for the WAGL OML 11 JV — 171 issuance lines, 316 stock units, full audit trail and Excel exports.</li>
-        <li>Digitized the NEPL Process Safety Tracker workbook into a live JV dashboard with email alerts (oml11-safety.vercel.app).</li>
+        <li>Digitized the NEPL Process Safety Tracker workbook into a live JV dashboard with email alerts (oml11-safety.vercel.app); migrated persistence to Neon Postgres with a scheduled digest and a same-origin Netlify API, and fixed a jsonb load bug that reseeded live state.</li>
+        <li>Shipped AI-agent-assisted apps: the OML11 AssetHub enhancement roadmap (auth/RBAC and actor-aware audit, custody check-in/out ledger, maintenance, QR labels, bulk operations, custom fields, depreciation, e-sign and reporting), and FleetOS — a local-first fleet management app built from the Fleet Management Report workbook.</li>
+        <li>Introduced cost governance for the Netlify Free tier after a credit overrun — preview-by-default deploys, live credit checks, cooldown and per-site monthly caps — keeping five sites online without a plan upgrade.</li>
         <li>Automate and digitize daily OML 11 workflows on the <b>Microsoft Power Platform</b> — Power Automate flows, Power Apps and SharePoint (O365).</li>
         <li>Directed daily IT operations — high system availability, responsive technical support and proactive monitoring that resolves issues before business impact.</li>
         <li>Coordinated incident response and service restoration, minimizing downtime; implemented backup &amp; disaster recovery to safeguard critical business data.</li>
@@ -561,6 +563,38 @@ html[data-theme="light"] #cmdk-list li[aria-selected="true"]{background:rgba(166
       <a class="link" href="https://oml11-safety.vercel.app" target="_blank" rel="noopener">oml11-safety.vercel.app ↗</a>
     </div>
     <div class="pcard rv">
+      <div class="top"><h3>CV site — Abasthan copy</h3><span class="pill live">● LIVE</span></div>
+      <p>Installable, offline-ready PWA copy of this CV deployed on the Abasthan Free tier — original Netlify and Vercel deployments retained.</p>
+      <ul class="feat">
+        <li>Command palette, theme toggle, offline service worker and JSON-LD SEO</li>
+        <li>Deployed from a public GitHub repo with Auto-Deploy on <code>main</code></li>
+        <li>Custom subdomain, registered SSH key and Free-tier resource limits</li>
+      </ul>
+      <div class="stack">Static HTML · Service Worker · GitHub · Abasthan</div>
+      <a class="link" href="https://emmanuel-adarighofua.abasthan.app" target="_blank" rel="noopener">emmanuel-adarighofua.abasthan.app ↗</a>
+    </div>
+    <div class="pcard rv">
+      <div class="top"><h3>FleetOS — Fleet Management</h3><span class="pill live">● LIVE</span></div>
+      <p>Local-first fleet management app built from the Fleet Management Report workbook — no build step, no backend, no accounts.</p>
+      <ul class="feat">
+        <li>13 modules: vehicles, drivers, tyres, trips, fuel, maintenance, inventory, vendors, invoices, incidents, alerts and reports</li>
+        <li>Compliance alerts, fuel economy, fitment history and cost of ownership per vehicle</li>
+        <li>CSV export, JSON backup/restore and a demo Nigerian fleet priced in ₦</li>
+      </ul>
+      <div class="stack">Vanilla JS · localStorage · GitHub Pages</div>
+      <a class="link" href="https://emmaniche.github.io/fleet-management-app/" target="_blank" rel="noopener">emmaniche.github.io/fleet-management-app ↗</a>
+    </div>
+    <div class="pcard rv">
+      <div class="top"><h3>Netlify Credit Guard</h3><span class="pill live">● RUNNING</span></div>
+      <p>Team-wide deploy guardrails built after a 316-credit overrun — protecting all five Netlify sites on the Free plan.</p>
+      <ul class="feat">
+        <li>Preview-by-default deploys; production requires an explicit gated wrapper</li>
+        <li>Live credit check, 15-minute cooldown and monthly per-site caps</li>
+        <li>Deploy ledger, calendar reminders and a daily credit check task</li>
+      </ul>
+      <div class="stack">Node.js · Netlify API · Windows Task Scheduler</div>
+    </div>
+    <div class="pcard rv">
       <div class="top"><h3>OML11 UAUC Tracker</h3><span class="pill dev">IN DEVELOPMENT</span></div>
       <p>JV operations tracker web app with SQL migrations — extending the OML 11 digital toolkit.</p>
       <div class="stack">Next.js · SQL migrations</div>
@@ -608,6 +642,7 @@ html[data-theme="light"] #cmdk-list li[aria-selected="true"]{background:rgba(166
         <button class="btn ghost" id="shareBtn2" type="button">↗ Share this CV</button>
       </div>
     </div>
+    <p class="small" style="margin-top:18px">This CV also lives at <a href="https://emmanuel-adarighofua.abasthan.app" target="_blank" rel="noopener">emmanuel-adarighofua.abasthan.app ↗</a></p>
     <p class="small" style="margin-top:26px">References available on request · © 2026 Emmanuel Adarighofua · Last updated November 2026 · <a href="Emmanuel-Adarighofua-CV.pdf" download>Download CV (PDF)</a></p>
     <p class="small kbdhint">Tip: press <kbd>Ctrl</kbd> <kbd>K</kbd> (or <kbd>⌘</kbd> <kbd>K</kbd>) to jump anywhere.</p>
   </div>
@@ -828,6 +863,8 @@ function shareCV(){
     {label:'Copy phone number',hint:'action',icon:'⧉',kw:'phone copy call',fn:()=>copyText('+2348165471453').then(()=>toast('Phone number copied'))},
     {label:'Open OML11 AssetHub',hint:'live app',icon:'⬗',kw:'assethub app live project',fn:()=>open('https://oml11-assethub.vercel.app','_blank','noopener')},
     {label:'Open Process Safety Tracker',hint:'live app',icon:'⬗',kw:'safety tracker app live project',fn:()=>open('https://oml11-safety.vercel.app','_blank','noopener')},
+    {label:'Open CV (Abasthan)',hint:'live app',icon:'⬗',kw:'cv resume abasthan live copy',fn:()=>open('https://emmanuel-adarighofua.abasthan.app','_blank','noopener')},
+    {label:'Open FleetOS demo',hint:'live app',icon:'⬗',kw:'fleetos fleet management demo',fn:()=>open('https://emmaniche.github.io/fleet-management-app/','_blank','noopener')},
     {label:'Open GitHub profile',hint:'link',icon:'⬗',kw:'github code repos emmaniche',fn:()=>open('https://github.com/emmaniche','_blank','noopener')},
     {label:'Toggle light / dark theme',hint:'action',icon:'◐',kw:'theme dark light mode toggle',fn:()=>{window.__toggleTheme&&window.__toggleTheme()}},
     {label:'Back to top',hint:'action',icon:'↑',kw:'top home start',fn:()=>scrollTo({top:0,behavior:'smooth'})},
