@@ -642,6 +642,14 @@ html[data-theme="light"] #cmdk-list li[aria-selected="true"]{background:rgba(166
         <button class="btn ghost" id="shareBtn2" type="button">↗ Share this CV</button>
       </div>
     </div>
+    <div class="fitem rv" style="margin-top:24px;max-width:640px">
+      <div class="lab">Ask Emmanuel (AI)</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <input id="askInput" type="text" maxlength="300" placeholder="e.g. What projects have you built?" style="flex:1;min-width:220px;padding:10px 12px;border-radius:8px;border:1px solid #8884;background:transparent;color:inherit">
+        <button class="btn gold" id="askBtn" type="button">Ask</button>
+      </div>
+      <p class="small" id="askAnswer" style="margin-top:10px;min-height:1.4em">Ask a question about my experience, skills or projects.</p>
+    </div>
     <p class="small" style="margin-top:18px">This CV also lives at <a href="https://emmanuel-adarighofua.abasthan.app" target="_blank" rel="noopener">emmanuel-adarighofua.abasthan.app ↗</a></p>
     <p class="small" style="margin-top:26px">References available on request · © 2026 Emmanuel Adarighofua · Last updated November 2026 · <a href="Emmanuel-Adarighofua-CV.pdf" download>Download CV (PDF)</a></p>
     <p class="small kbdhint">Tip: press <kbd>Ctrl</kbd> <kbd>K</kbd> (or <kbd>⌘</kbd> <kbd>K</kbd>) to jump anywhere.</p>
@@ -958,6 +966,24 @@ addEventListener('keydown',e=>{
 if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){
   addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 }
+/* ============ Ask Emmanuel (Workers AI) ============ */
+(()=>{
+  const btn=document.getElementById('askBtn'), input=document.getElementById('askInput'), out=document.getElementById('askAnswer');
+  if(!btn||!input||!out) return;
+  const ask=async()=>{
+    const q=input.value.trim();
+    if(!q){out.textContent='Type a question first.';return;}
+    out.textContent='Thinking…'; btn.disabled=true;
+    try{
+      const r=await fetch('https://cv-ai.emmanuel-cv.workers.dev/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})});
+      const d=await r.json();
+      out.textContent=d.answer||d.error||'No answer.';
+    }catch(e){out.textContent='The assistant is unavailable right now.';}
+    finally{btn.disabled=false;}
+  };
+  btn.addEventListener('click',ask);
+  input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();ask();}});
+})();
 </script>
 </body>
 </html>
